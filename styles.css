@@ -1,0 +1,129 @@
+/* RESET BÁSICO */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Ajustes globales */
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Lobster', cursive;
+  background-color: #d9c3af;
+  color: #c4302b;
+}
+
+/* HEADER y NAVBAR */
+header {
+  flex: 0 0 auto;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 60px;
+}
+
+/* LOGO */
+.brand {
+  font-size: 3rem;
+  text-decoration: none;
+  color: #c4302b;
+}
+
+/* Ícono hamburguesa (oculto en desktop) */
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  color: #c4302b;
+  cursor: pointer;
+}
+
+/* MENÚ */
+.navbar-center ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.navbar-center a {
+  text-decoration: none;
+  color: #c4302b;
+  font-size: 1.6rem;
+}
+
+/* MAIN ocupa el espacio disponible */
+main {
+  flex: 1 0 auto;
+  position: relative;
+}
+
+/* HERO */
+.hero {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+/* IMAGEN CHAVALÍN */
+.chavalin {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 800px;
+  height: auto;
+  max-width: 100%;
+}
+
+/* Sección de contenido adicional */
+.contenido {
+  padding: 20px;
+}
+
+/* FOOTER */
+footer {
+  flex: 0 0 auto;
+}
+
+/* ===================== */
+/* MEDIA QUERIES MOBILE */
+/* ===================== */
+@media (max-width: 768px) {
+  /* Ajustes en la navbar */
+  .navbar {
+    padding: 15px 20px;
+    flex-wrap: wrap; /* Permite que el menú se ubique debajo si es necesario */
+  }
+
+  /* Mostrar el ícono hamburguesa */
+  .hamburger {
+    display: block;
+  }
+
+  /* Por defecto, en móvil el menú se oculta */
+  .navbar-center {
+    width: 100%;
+    display: none;
+  }
+
+  /* Al activar, el menú se muestra en el flujo del documento,
+     empujando el contenido hacia abajo */
+  .navbar-center.active {
+    display: block;
+  }
+
+  .navbar-center ul {
+    flex-direction: column;
+    align-items: center; 
+    gap: 10px;
+    padding: 10px 0;
+  }
+}

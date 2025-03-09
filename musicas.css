@@ -1,0 +1,234 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 1) BODY en FLEX COLUMN para “sticky footer” */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* HEADER y FOOTER no crecen, MAIN se expande */
+header, footer {
+  flex-shrink: 0;
+}
+main {
+  flex: 1; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* FONDO Y TIPOGRAFÍA GLOBAL */
+body {
+  font-family: 'Lobster', cursive;
+  background-color: #d9c3af; 
+  color: #c4302b;
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 60px;
+}
+.brand {
+  font-size: 3rem;
+  text-decoration: none;
+  color: #c4302b;
+}
+/* Menú en escritorio */
+.navbar-center ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+.navbar-center a {
+  text-decoration: none;
+  color: #c4302b;
+  font-size: 1.6rem;
+}
+.navbar-center a.active {
+  text-decoration: underline;
+}
+/* Ícono hamburguesa (oculto en escritorio) */
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  color: #c4302b;
+  cursor: pointer;
+}
+/* Clases para mostrar/ocultar */
+.mobile-only {
+  display: none;
+}
+.desktop-only {
+  display: block;
+}
+.navbar-right i {
+  font-size: 1.8rem;
+  color: #c4302b;
+  margin-left: 20px;
+}
+
+/* SECCIÓN MÚSICA */
+.music-section {
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+  max-width: 1200px;
+  width: 100%;
+}
+
+/* REPRODUCTOR (IZQUIERDA) */
+.player-container {
+  width: 400px; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 30px;
+  font-family: Arial, sans-serif;
+  color: #000; 
+}
+.cover-art {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  margin-bottom: 20px;
+  border: 4px solid #c4302b;
+}
+.controls {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.progress-container {
+  width: 100%;
+  margin-bottom: 10px;
+}
+#progress-bar {
+  width: 100%;
+}
+.buttons {
+  display: flex;
+  gap: 20px;
+}
+.buttons button {
+  background: none;
+  border: none;
+  color: #c4302b;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+/* PLAYLIST (DERECHA) */
+.playlist-container {
+  width: 300px;
+  margin-bottom: 30px;
+  font-family: Arial, sans-serif; 
+  color: #000;
+}
+.playlist-container h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+#playlist {
+  list-style: none;
+  line-height: 1.8;
+}
+#playlist li {
+  cursor: pointer;
+  margin-bottom: 8px;
+  color: #c4302b; 
+  font-size: 1.1rem;
+}
+#playlist li:hover {
+  text-decoration: underline;
+}
+
+/* FOOTER */
+.music-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 20px 0;
+}
+.music-quote {
+  font-size: 2rem;
+  font-style: italic;
+  color: #c4302b;
+}
+.music-icons {
+  display: flex;
+  gap: 30px;
+}
+.music-icons i {
+  font-size: 2rem;
+  color: #c4302b;
+}
+
+/* DISTRIBUCIÓN EN FILA EN ESCRITORIO */
+@media (min-width: 992px) {
+  .music-section {
+    flex-direction: row;
+    justify-content: space-evenly; 
+    align-items: flex-start; 
+  }
+  .player-container {
+    margin-right: 50px;
+    margin-bottom: 0;
+  }
+}
+
+/* RESPONSIVE PARA MÓVILES */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 10px 20px;
+    flex-wrap: wrap;
+  }
+  .hamburger {
+    display: block; 
+  }
+  /* Menú oculto por defecto */
+  .navbar-center {
+    display: none;
+    width: 100%;
+  }
+  .navbar-center.active {
+    display: block;
+  }
+  .navbar-center ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding: 15px 0;
+  }
+  /* Ocultamos .navbar-right en móvil y mostramos mobile-only */
+  .navbar-right {
+    display: none;
+  }
+  .mobile-only {
+    display: block;
+  }
+  .desktop-only {
+    display: none;
+  }
+
+  .cover-art {
+    width: 250px;
+    height: 250px;
+  }
+  .buttons button {
+    font-size: 1.5rem;
+  }
+  #playlist li {
+    font-size: 1rem;
+  }
+}

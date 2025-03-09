@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Paulo Londra - Biografía</title>
+
+  <!-- Viewport para responsive -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Hoja de estilos -->
+  <link rel="stylesheet" href="biografia.css">
+
+  <!-- Fuente Lobster -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link 
+    href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" 
+    rel="stylesheet"
+  >
+
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    crossorigin="anonymous"
+  />
+</head>
+<body>
+
+  <!-- ====== CABECERA / MENÚ ====== -->
+  <header>
+    <nav class="navbar">
+      <!-- Logo a la izquierda -->
+      <div class="navbar-left">
+        <a class="brand" href="index.html">Paulo Londra</a>
+      </div>
+
+      <!-- Ícono hamburguesa (móvil) -->
+      <div class="hamburger" id="hamburger">
+        <i class="fa-solid fa-bars"></i>
+      </div>
+      
+      <!-- Menú principal -->
+      <div class="navbar-center" id="navbar-menu">
+        <ul>
+          <li><a class="active" href="biografia.html">Biografía</a></li>
+          <li><a href="discografia.html">Discografía</a></li>
+          <li><a href="tour.html">Tour</a></li>
+          <li><a href="#">Músicas</a></li>
+          <!-- Íconos SOLO en móvil (por defecto ocultos en escritorio) -->
+          <li class="mobile-only">
+            <a href="#"><i class="fa-solid fa-globe"></i></a>
+          </li>
+          <li class="mobile-only">
+            <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Íconos de idioma y carrito para ESCRITORIO -->
+      <div class="navbar-right desktop-only">
+        <a href="#"><i class="fa-solid fa-globe"></i></a>
+        <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ====== CONTENIDO PRINCIPAL ====== -->
+  <main>
+    <section class="bio-section">
+      <!-- #23 grande, inclinado, posicionado absoluto a la izquierda -->
+      <h1 class="big-number">#23</h1>
+
+      <!-- Texto (absoluto a la derecha en escritorio),
+           pero en flujo normal en móvil -->
+      <div class="bio-text">
+        <p>
+          Paulo Londra es un cantante y compositor argentino nacido el 12 de abril de 1998 en Córdoba, Argentina.
+          Inició su carrera musical participando en batallas de freestyle en plazas locales, donde destacó por su talento y estilo único.
+          Con el paso del tiempo, fue ganando popularidad gracias a su capacidad para fusionar ritmos urbanos con melodías pegadizas,
+          lo que lo convirtió en uno de los artistas más influyentes de la escena urbana en su país. Su carisma y creatividad lo han llevado a colaborar con reconocidos músicos,
+          logrando posicionarse en los primeros puestos de las listas de éxitos a nivel latinoamericano.
+        </p>
+        <p>
+          Entre sus canciones más populares se encuentran “Nena Maldición”, “Adán y Eva” y “Tal Vez”, temas que acumulan millones de reproducciones en plataformas digitales.
+          Tras un período de disputas contractuales, regresó a la industria musical con gran expectativa por parte de sus seguidores.
+          Su versatilidad, que abarca desde el trap hasta el pop, le ha permitido conectar con un público amplio y diverso.
+          A día de hoy, Paulo Londra continúa sorprendiendo con nuevos lanzamientos, reafirmando su posición como uno de los referentes jóvenes de la música argentina.
+        </p>
+      </div>
+
+      <!-- Footer dentro de la sección (absoluto en escritorio,
+           en flujo normal en móvil) -->
+      <div class="bio-footer">
+        <div class="bio-quote">"Leones con Flow"</div>
+        <div class="bio-icons">
+          <a href="#" aria-label="Spotify"><i class="fa-brands fa-spotify"></i></a>
+          <a href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="#" aria-label="Apple Music"><i class="fa-brands fa-apple"></i></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Script para menú en móvil -->
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navbarMenu = document.getElementById('navbar-menu');
+    hamburger.addEventListener('click', () => {
+      navbarMenu.classList.toggle('active');
+    });
+  </script>
+</body>
+</html>

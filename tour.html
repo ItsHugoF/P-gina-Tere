@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Paulo Londra - Tour</title>
+
+  <!-- Hoja de estilos específica de “Tour” -->
+  <link rel="stylesheet" href="tour.css">
+
+  <!-- Fuente Lobster -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Lobster&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    crossorigin="anonymous"
+  />
+</head>
+<body>
+  <!-- ====== NAVBAR ====== -->
+  <header>
+    <nav class="navbar">
+      <!-- Logo -->
+      <div class="navbar-left">
+        <a class="brand" href="index.html">Paulo Londra</a>
+      </div>
+      <!-- Ícono hamburguesa -->
+      <div class="hamburger" id="hamburger">
+        <i class="fa-solid fa-bars"></i>
+      </div>
+      <!-- Menú colapsable -->
+      <div class="navbar-center" id="navbar-menu">
+        <ul>
+          <li><a href="biografia.html">Biografía</a></li>
+          <li><a href="discografia.html">Discografía</a></li>
+          <li><a class="active" href="tour.html">Tour</a></li>
+          <li><a href="musicas.html">Músicas</a></li>
+          <!-- Íconos SOLO para móvil -->
+          <li class="mobile-only">
+            <a href="#"><i class="fa-solid fa-globe"></i></a>
+          </li>
+          <li class="mobile-only">
+            <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+          </li>
+        </ul>
+      </div>
+      <!-- Íconos de escritorio -->
+      <div class="navbar-right desktop-only">
+        <a href="#"><i class="fa-solid fa-globe"></i></a>
+        <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ====== CONTENIDO PRINCIPAL - LISTA DE EVENTOS ====== -->
+  <main>
+    <section class="tour-section">
+
+      <!-- Ejemplo de eventos (repite según necesites) -->
+      <div class="tour-item">
+        <div class="tour-date">Oct 20, 2024</div>
+        <div class="tour-name">Festival Weekend Beach Torre del Mar</div>
+        <div class="tour-place">Málaga</div>
+      </div>
+
+      <div class="tour-item">
+        <div class="tour-date">Oct 21, 2024</div>
+        <div class="tour-name">Latin Music Festival</div>
+        <div class="tour-place">Barcelona</div>
+      </div>
+
+      <div class="tour-item">
+        <div class="tour-date">Oct 25, 2024</div>
+        <div class="tour-name">Buenos Aires Arena</div>
+        <div class="tour-place">Argentina</div>
+      </div>
+
+      <div class="tour-item">
+        <div class="tour-date">Oct 28, 2024</div>
+        <div class="tour-name">Festival Cocacola Music Experience</div>
+        <div class="tour-place">Madrid</div>
+      </div>
+
+      <!-- FOOTER con “Leones con Flow” + iconos -->
+      <div class="tour-footer">
+        <div class="tour-icons">
+          <div class="tour-quote">"Leones con Flow"</div>
+          <a href="#" aria-label="Spotify"><i class="fa-brands fa-spotify"></i></a>
+          <a href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="#" aria-label="Apple Music"><i class="fa-brands fa-apple"></i></a>
+        </div>
+      </div>
+
+    </section>
+  </main>
+
+  <!-- Script para el menú en móvil -->
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navbarMenu = document.getElementById('navbar-menu');
+    hamburger.addEventListener('click', () => {
+      navbarMenu.classList.toggle('active');
+    });
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+
+

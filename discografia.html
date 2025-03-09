@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Paulo Londra - Discografía</title>
+
+  <!-- Hoja de estilos -->
+  <link rel="stylesheet" href="discografia.css">
+
+  <!-- Fuente Lobster -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Lobster&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    crossorigin="anonymous"
+  />
+</head>
+<body>
+
+  <!-- ====== NAVBAR ====== -->
+  <header>
+    <nav class="navbar">
+      <!-- Logo a la izquierda -->
+      <div class="navbar-left">
+        <a class="brand" href="index.html">Paulo Londra</a>
+      </div>
+      <!-- Ícono hamburguesa para móvil -->
+      <div class="hamburger" id="hamburger">
+        <i class="fa-solid fa-bars"></i>
+      </div>
+      <!-- Menú principal -->
+      <div class="navbar-center" id="navbar-menu">
+        <ul>
+          <li><a href="biografia.html">Biografía</a></li>
+          <li><a class="active" href="discografia.html">Discografía</a></li>
+          <li><a href="tour.html">Tour</a></li>
+          <li><a href="#">Músicas</a></li>
+
+          <!-- Íconos SOLO para móvil (por defecto ocultos en escritorio) -->
+          <li class="mobile-only">
+            <a href="#"><i class="fa-solid fa-globe"></i></a>
+          </li>
+          <li class="mobile-only">
+            <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+          </li>
+        </ul>
+      </div>
+      <!-- Íconos de idioma y carrito para ESCRITORIO -->
+      <div class="navbar-right desktop-only">
+        <a href="#"><i class="fa-solid fa-globe"></i></a>
+        <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ====== CONTENIDO PRINCIPAL ====== -->
+  <main>
+    <section class="disco-section">
+      <!-- GRID de 6 elementos -->
+      <div class="disco-grid">
+        <div class="disco-item">
+          <div class="disco-cover"><img src="img/1.png" alt="Homerun"></div>
+          <h3>Homerun</h3>
+        </div>
+        <div class="disco-item">
+          <div class="disco-cover"><img src="img/2.png" alt="Back to the Game"></div>
+          <h3>Back to the Game</h3>
+        </div>
+        <div class="disco-item">
+          <div class="disco-cover"><img src="img/3.png" alt="Recién Soltera"></div>
+          <h3>Recién Soltera</h3>
+        </div>
+        <div class="disco-item">
+          <div class="disco-cover"><img src="img/4.png" alt="Pian A"></div>
+          <h3>Pian A</h3>
+        </div>
+        <div class="disco-item">
+          <div class="disco-cover"><img src="img/5.png" alt="A Veces"></div>
+          <h3>A Veces</h3>
+        </div>
+        <div class="disco-item">
+          <div class="disco-cover"><img src="img/6.png" alt="Forever Alone"></div>
+          <h3>Forever Alone</h3>
+        </div>
+      </div>
+
+      <!-- FOOTER “Leones con Flow” + iconos -->
+      <div class="disco-footer">
+        <div class="disco-quote">"Leones con Flow"</div>
+        <div class="disco-icons">
+          <a href="#"><i class="fa-brands fa-spotify"></i></a>
+          <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="#"><i class="fa-brands fa-apple"></i></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Script para el menú en móvil -->
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navbarMenu = document.getElementById('navbar-menu');
+    hamburger.addEventListener('click', () => {
+      navbarMenu.classList.toggle('active');
+    });
+  </script>
+</body>
+</html>

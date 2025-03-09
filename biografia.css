@@ -1,0 +1,216 @@
+/* =========================================
+   RESET y estilos base
+========================================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: 'Lobster', cursive;
+  background-color: #d9c3af;
+  color: #c4302b;
+}
+
+/* =========================================
+   NAVBAR 
+========================================= */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 60px;
+}
+.brand {
+  font-size: 3rem;
+  text-decoration: none;
+  color: #c4302b;
+}
+/* Menú en escritorio */
+.navbar-center ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+.navbar-center a {
+  text-decoration: none;
+  color: #c4302b;
+  font-size: 1.6rem;
+}
+.navbar-center a.active {
+  text-decoration: underline;
+}
+/* Ícono hamburguesa (sólo se ve en móviles) */
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  color: #c4302b;
+  cursor: pointer;
+}
+
+/* Clases para mostrar/ocultar iconos según dispositivo */
+.mobile-only {
+  display: none; /* Oculto en escritorio */
+}
+.desktop-only {
+  display: block; /* Visible en escritorio */
+}
+.navbar-right i {
+  font-size: 1.8rem;
+  color: #c4302b;
+  margin-left: 20px;
+}
+
+/* =========================================
+   SECCIÓN PRINCIPAL (BIO) - ESCRITORIO
+========================================= */
+.bio-section {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 100px); /* Espacio total menos ~navbar */
+  overflow: hidden; /* Evita scrollbars en escritorio */
+}
+
+/* #23 ABSOLUTO a la izquierda */
+.big-number {
+  position: absolute;
+  top: 200px;
+  left: 60px;
+  font-size: 220px;
+  color: #c4302b;
+  transform: rotate(-15deg);
+  transform-origin: center;
+  z-index: 0;
+}
+
+/* TEXTO ABSOLUTO A LA DERECHA (escritorio) */
+.bio-text {
+  position: absolute;
+  top: 200px;
+  left: 600px;  /* Ajusta para dejar espacio al #23 */
+  right: 80px;  /* Ajusta para no chocar con borde */
+  font-family: Arial, sans-serif;
+  font-size: 1rem;
+  color: #000;
+  line-height: 1.5;
+  z-index: 1;   /* Por encima del #23 */
+}
+
+/* FOOTER ABSOLUTO ABAJO */
+.bio-footer {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  z-index: 1;
+}
+.bio-quote {
+  font-size: 2rem;
+  font-style: italic;
+  margin-bottom: 10px;
+}
+.bio-icons {
+  display: inline-flex;
+  gap: 20px;
+}
+.bio-icons i {
+  font-size: 2rem;
+  color: #c4302b;
+}
+
+/* =========================================
+   MEDIA QUERY: INTERMEDIO (ej. 769px - 1200px)
+   Ajustamos para evitar que el texto atraviese el #23
+========================================= */
+@media (min-width: 769px) and (max-width: 1200px) {
+  .big-number {
+    top: 150px;
+    left: 40px;
+    font-size: 180px;
+  }
+  .bio-text {
+    top: 150px;
+    left: 420px;
+    right: 40px;
+    font-size: 0.95rem;
+  }
+  .bio-footer {
+    bottom: 30px;
+  }
+}
+
+/* =========================================
+   MEDIA QUERY: MOBILE/TABLET (≤768px)
+========================================= */
+@media (max-width: 768px) {
+  /* NAVBAR: se hace desplegable */
+  .navbar {
+    padding: 10px 20px;
+    flex-wrap: wrap;
+  }
+  .hamburger {
+    display: block; /* Mostramos el ícono */
+  }
+  /* Menú oculto por defecto */
+  .navbar-center {
+    display: none;
+    width: 100%;
+  }
+  .navbar-center.active {
+    display: block;
+  }
+  .navbar-center ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding: 15px 0;
+  }
+  .navbar-center a {
+    font-size: 1.3rem;
+  }
+  /* Ocultamos icons de escritorio, mostramos .mobile-only */
+  .navbar-right {
+    display: none;
+  }
+  .mobile-only {
+    display: block;
+  }
+  .desktop-only {
+    display: none;
+  }
+
+  /* BIO EN MÓVIL: quitar absolute para que sea “fluido” */
+  .bio-section {
+    height: auto;        
+    min-height: 100vh;  
+    overflow: visible;  
+    padding: 20px;      
+  }
+  .big-number {
+    position: static;
+    font-size: 120px;
+    margin: 20px auto;
+    display: block;
+    text-align: center;
+    transform: rotate(-15deg);
+  }
+  .bio-text {
+    position: static;
+    margin-top: 10px;
+    left: auto;
+    right: auto;
+    font-size: 0.95rem;
+    color: #000;
+  }
+  .bio-footer {
+    position: static;
+    margin: 20px auto;
+    transform: none;
+  }
+}
